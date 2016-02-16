@@ -1,0 +1,13 @@
+New log file opened at Tue Feb 16 20:50:52 KST 2016 by 29883@HarleyKimui-MacBook-Pro.local
+Taking next connection to: 63642
+New client attempting to connect on port: 63643-63642
+  Address = /172.26.104.62:63642
+This client on port 63643 has uuid cb1b7105-034a-4cca-be65-44fd3af47826 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-cb1b7105-034a-4cca-be65-44fd3af47826
+Taking next connection to: 63642
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63642
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63642
