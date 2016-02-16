@@ -1,3 +1,7 @@
+.idea
+
+.sbtserver
+
 /RUNNING_PID
 /logs/
 /project/*-shim.sbt
