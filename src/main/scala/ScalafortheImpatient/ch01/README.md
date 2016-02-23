@@ -1,10 +1,10 @@
 # Chapter1. 기본기
 
 ## 스칼라 설치
-<pre><code>
+```
 $ brew update
 $ brew install scala
-</code></pre>
+```
 
 ## 스칼라 인터프리터
 Read-Eval-Print-Loop라는 뜻에서 REPL(발음:레플)이라고 부름
@@ -42,10 +42,10 @@ http://zeroturnaround.com/rebellabs/the-adventurous-developers-guide-to-jvm-lang
 - val : immutable. getter만 있음. 할당 불가능
 - var : mutable. getter/setter모두 있음. value
 - 세미콜론 안 써도 됨
-- <pre><code>
+```
     var = variable
     val = variable + final (or value)
-</code></pre>
+```
 
 ## 타입
 - 모든 타입이 클래스다. primitive type, class type 구분이 없음.
@@ -56,7 +56,7 @@ http://zeroturnaround.com/rebellabs/the-adventurous-developers-guide-to-jvm-lang
 
 ## Closure : lexically scoped code. 하나의 스콥을 생성해준다는 개념
 - 클로저는 자신의 범위(Scope) 밖에 있는 변수들에 접근할 수 있는 함수를 의미한다
-- <pre><code>
+```
 function outerFn() {
     var count=1;
     return function (cnt) {
@@ -67,7 +67,7 @@ function outerFn() {
 var func = outerFn();
 func(10); // 결과 값 11
 func(10); // 결과 값 21
-</code></pre>
+```
 - 위 코드에서 func=outerFn()이 Closure가 됨.
 - count는 function (cnt)외부에 있는 변수로써 func에 의해 참조되고 있음.
 - func가 살아있는 한 count는 GC에 의해 사라지지 않음.

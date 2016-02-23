@@ -1,4 +1,4 @@
-package ch5
+package ScalafortheImpatient.ch05
 
 /**
   * Created by Harley on 2016. 2. 16..
