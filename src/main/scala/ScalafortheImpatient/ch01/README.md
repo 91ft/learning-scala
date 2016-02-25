@@ -82,3 +82,5 @@ func(10); // 결과 값 21
     - https://twitter.github.io/scala_school/ko/basics.html
 - Community-driven documentation for Scala (한글)
     - http://docs.scala-lang.org/ko/tutorials/scala-for-java-programmers.html
+- 마틴오더스키 직접 강의. Functional Programming Principles in Scala (영어)
+    - https://www.coursera.org/course/progfun
