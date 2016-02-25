@@ -77,6 +77,8 @@ func(10); // 결과 값 21
 - 다른 구문의 식 안에서 함수를 사용하면, 이것은 함수 리터럴(function literal)이다.
 - 함수 리터럴은 함수이름을 명시 하지 않는 것을 제외하고는 함수의 일반적인 정의 방법과 모양이 동일하다.
 
-## 참고. 스칼라 학교
-- 트위터에서 스칼라에 입문하는 개발자를 위해 만든 가이드
-- https://twitter.github.io/scala_school/ko/basics.html
+## 참고. 기초 문서
+- 트위터에서 스칼라에 입문하는 개발자를 위해 만든 가이드 (한글)
+    - https://twitter.github.io/scala_school/ko/basics.html
+- Community-driven documentation for Scala (한글)
+    - http://docs.scala-lang.org/ko/tutorials/scala-for-java-programmers.html
