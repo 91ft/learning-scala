@@ -8,3 +8,8 @@
 ![](http://homepages.inf.ed.ac.uk/wadler/gj/gj-back.jpg)
 > Generic Java 개발하던 시기(아마 1999년?)의 귀여웠던 Martin Odersky. 내년(2017)에는 한국 나이로 60이 되신다. 
 > 우리도 교수님을 본받아 나이들어도 멋진 개발자가 됩시다!
+
+## school
+![coursera](https://www.coursera.org/course/progfun)
+![scala docs](http://docs.scala-lang.org/ko/tutorials/tour/tour-of-scala)
+![twitter school](https://twitter.github.io/scala_school/ko/basics.html)
