@@ -7,8 +7,7 @@ object AdminFactory {
   def create(name : String) : Admin = new Admin(createUniqId(), name)
 }
 
-val adminFactory = new AdminFactory
-val newAdmin = adminFactory.create("김수현")
+val newAdmin = AdminFactory.create("김수현")
 ```
 
 ## apply
@@ -18,8 +17,7 @@ object AdminFactory {
   def apply(name : String) : Admin = new Admin(createUniqId(), name)
 }
 
-val adminFactory = new AdminFactory
-val newAdmin = adminFactory("김수현")
+val newAdmin = AdminFactory("김수현")
 ```
 
 ## 컴패니언 오브젝트
