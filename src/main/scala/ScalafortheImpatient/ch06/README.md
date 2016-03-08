@@ -62,6 +62,18 @@ list: List[Int] = List(0, 1, 2)
 class List
 object List
 ```
+자세히 살펴보면...
+```scala
+javap ScalafortheImpatient.ch06.Admin
+Compiled from "Admin.scala"
+
+public class ScalafortheImpatient.ch06.Admin {
+  public static long createUniqId();
+  public static ScalafortheImpatient.ch06.Admin apply(java.lang.String);
+  public java.lang.String toString();
+  public ScalafortheImpatient.ch06.Admin(long, java.lang.String);
+}
+```
 
 ## class와 trait를 확장
 object는 클래스나 trait를 상속받을 수 있다
