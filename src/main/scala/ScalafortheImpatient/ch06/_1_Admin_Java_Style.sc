@@ -32,3 +32,4 @@ val admin = new Admin((new AdminFactory).createUniqId(), "김수현");
 */
 val adminFactory = new AdminFactory
 val newAdmin = adminFactory.create("김수현")
+
