@@ -23,11 +23,6 @@ class AdminFactory {
 }
 
 /*
-* 사용
-*/
-val admin = new Admin((new AdminFactory).createUniqId(), "김수현");
-
-/*
 * Factory 사용
 */
 val adminFactory = new AdminFactory

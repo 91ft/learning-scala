@@ -93,6 +93,17 @@ class Admin(adminType : AdminType.Value)
 Admin(AdminType.Reporter, "김수현")
 ```
 
+## App
+스칼라도 자바나 C처럼 main 함수로 시작해야 한다.
+대신 App trait를 상속받아 body에 프로그램 코드를 넣을 수 있다.
+```scala
+object Main extends App {
+  println("Hello Scala!")
+}
+```
+
+---
+
 > ## 정리
 > #### object
 > * 스칼라에서는 static 대신 object를 사용한다.
