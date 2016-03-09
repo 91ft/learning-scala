@@ -1,0 +1,2 @@
+scalac _6_Main1.scala
+scala ScalafortheImpatient.ch06._6_Main1
