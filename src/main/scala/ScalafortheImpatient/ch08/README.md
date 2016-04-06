@@ -42,10 +42,30 @@ c match {
 - 서브클래스에서는 접근 가능하다 다른 곳에서는 접근 불가능
 
 ## 8.5 슈퍼클레스 생성
+- 클래스는 하나의 기본 생성자와 여러 보조 생성자가 있다
+- 모든 보조 생성자는 앞선 보조생성자나 기본 생성자 호출로 시작해야만 한다. 이건 규칙~!
+- 따라서 오직 기본 생성자만이 슈퍼 클래스 생성자를 호출할 수 있다.
+```
+class Koguryo(name: String, center: String) extends Country(name)
+```
+- 위 예에서 클래스 인자는 기본 생성자 인자라고 생각하면 쉽다.
+- Koguryo 클래스는 name, center 두 개의 인자를 가지고 그 중 name은 슈퍼클래스 Country로 전달한다.
+- 스칼라는 자바처럼 super(params)형태로 호출하진 않는다.
 
 ## 8.6 필드 오버라이드하기
+```
+8_6_example.sc참조
+```
+- def는 오직 다른 def만 override 할 수 있다
+- val은 다른 val이나 인자없는 def만 override 할 수 있다
+- var은 오직 추상 var만 override 할 수 있다
 
 ## 8.7 익명 서브클래스
+```
+8_7_example.sc참조
+```
+- 정의나 오버라이드가 있는 블록을 포함하면 익명 서브클래스의 인스턴스를 생성한다
+- 구조타입의 오브젝트를 생성하게 된다 (자세한 내용은 18장에서 공부할 예정 임)
 
 ## 8.8 추상 클래스
 ```
@@ -69,6 +89,30 @@ abstract class Element {
 - 단순히 초기 값이 없는 필드
 
 ## 8.10 생성 순서와 조기 정의
+```
+class Creature {
+  val range: Int = 10
+  val env: Array[Int] = new Array[Int](range)
+}
+
+class Ant extends Creature {
+  override val range = 2
+}
+
+```
+- 퀴즈. env의 length는 얼마일까요?
+
+- val을 final로 선언한다. 매우 안전 하지만 유연하지 못함
+- val을 슈퍼클래스에서 lazy로 선언한다. 안전하지만 약간 비효율적
+- 서브클래스에서 조기 정의 문법을 사용한다. 오호라!
+
+```
+class Bug extends {
+    override val range = 3
+} with Creature
+```
+- 조기정의
+    - 서브클래스의 val필드를 슈퍼클래스가 실행되기 전에 초기화 할 수 있게 해준다
 
 ## 8.11 스칼라 상속 계층
 ![Scala Hierarchy Tree](http://insaneguy.me/imgs/scalaclasshierarchy.png)
