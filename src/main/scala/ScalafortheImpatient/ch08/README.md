@@ -22,25 +22,29 @@ class Baekjae extends Country {
     
 ## 8.3 타입 검사와 캐스트
 ```
+val baekjae : Baekjae = new Baekjae("백제")
+val c : AnyRef = baekjae
+
+// example1
 if (c.isInstanceOf[Baekjae]) {
   val s = c.asInstanceOf[Baekjae] //c는 Baekjae 타입
 }
-```
-- isInstanceOf : 오브젝트가 특정 클래스에 속하는지 테스트할 때
-- asInstanceOf : 레퍼런스를 서브클래스 레퍼런스로 변환
-- 보통 패턴매칭이 타입검사와 캐스트 사용보다 더 좋은 대안이다.
-```
+
+// example2
 c match {
   case b: Baekjae => println("Wow! Baekjae!")
   case _ => println("Where am I?")
 }
 ```
+- isInstanceOf : 오브젝트가 특정 클래스에 속하는지 테스트할 때
+- asInstanceOf : 레퍼런스를 서브클래스 레퍼런스로 변환
+- 보통 패턴매칭이 타입검사와 캐스트 사용보다 더 좋은 대안이다.
 
 ## 8.4 보호 필드와 메소드
 - 자바처럼 필드나 메소드를 protected로 선언할 수 있다
-- 서브클래스에서는 접근 가능하다 다른 곳에서는 접근 불가능
+- 서브클래스에서는 접근 가능하나 다른 곳에서는 접근 불가능
 
-## 8.5 슈퍼클레스 생성
+## 8.5 슈퍼클래스 생성
 - 클래스는 하나의 기본 생성자와 여러 보조 생성자가 있다
 - 모든 보조 생성자는 앞선 보조생성자나 기본 생성자 호출로 시작해야만 한다. 이건 규칙~!
 - 따라서 오직 기본 생성자만이 슈퍼 클래스 생성자를 호출할 수 있다.
