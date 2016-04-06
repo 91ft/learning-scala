@@ -2,6 +2,10 @@
 
 ## 8.1 클래스 확장하기
 ```
+class Country {
+  override def toString = "[Country]" + getClass.getName
+}
+
 class Baekjae extends Country {
   override def toString = super.toString + ">> [Baekjae]"
 }
@@ -9,11 +13,6 @@ class Baekjae extends Country {
 - 자바처럼 extends 키워드로 클래스 확장
 
 ## 8.2 메소드 오버라이드하기
-```
-class Country {
-  override def toString = "[Country]" + getClass.getName
-}
-```
 - 추상 메소드가 아닌 메소드를 오버라이드 할 때 반드시 override 수정자를 사용해야 한다
 - override 사용 시 아래와 같은 일반 상황에서 유용한 에러 메시지를 줄 수 있다
     - 오버라이드하는 메소드의 이름에 오타가 있을 때
