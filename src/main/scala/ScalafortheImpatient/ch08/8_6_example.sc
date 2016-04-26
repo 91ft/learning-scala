@@ -1,19 +1,18 @@
-import ScalafortheImpatient.ch08.{Liam, Mishil, Onjo, Person}
+case class A(a: Int)
+val b = A(1)
+val c = A(1)
 
-// 8.6 필드 오버라이드하기 예제
+object B {
+  val name: String = "a"
+}
 
-val mishil: Person = new Mishil("Liam")
-val liam: Person = new Liam("Liam")
-val onju: Person = new Onjo("온조", 3)
+b == c
+b equals c
+b eq c
 
-mishil.id
-mishil.name
-mishil.toString
+val bb = B
+val bb2 = B
 
-liam.id
-liam.name
-liam.toString
-
-onju.id
-onju.name
-onju.toString
+bb == bb2
+bb equals bb2
+bb eq bb2

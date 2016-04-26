@@ -5,6 +5,8 @@ ant.range
 ant.env
 ant.env.length //이거슨 문제!
 
+
+
 /**
   * 1. Ant생성자는 슈퍼클래스인 Creature 생성자를 호출
   * 2. Creature생성자는 range 필드의 값을 10으로 설정
@@ -16,7 +18,7 @@ ant.env.length //이거슨 문제!
   */
 
 
-//val bug = new Bug()
-//bug.range
-//bug.env
-//bug.env.length
+val bug = new Bug()
+bug.range
+bug.env
+bug.env.length
