@@ -11,9 +11,10 @@
 
 ## 10.2 인터페이스로서 트레이트
 - 스칼라 트레이트는 자바인터페이스와 정확히 똑같이 동작할 수 있다
-- trait에서 구현되지 않은 메소드는 자동으로 abstract이다. 키워드 붙일 필요 없음.
-- trait의 추상메소드를 오버라이드할 때, override 키워드를 제공할 필요 없다.
-- 하나 이상의 trait가 필요하면, with 키워드로 더해준다.
+- 몇 가지 개발 규약
+    - 트레이트에서 구현되지 않은 메소드는 자동으로 abstract이다. 키워드 붙일 필요 없음.
+    - trait의 추상메소드를 오버라이드할 때, override 키워드를 제공할 필요 없다.
+    - 하나 이상의 trait가 필요하면, with 키워드로 더해준다.
 ```
 trait Logger {
   def log(msg: String)
@@ -24,7 +25,15 @@ class ConsoleLogger extends Logger with Cloneable with Serializable {
 }
 
 ```
-
+- 믹스인하여 사용하면 코드 반복을 줄일 수 있다
+- 즉 간결한 인터페이를 믹스인하여 풍부한 인터페이스로 만들 수 있다. (PiS 12장. Rectangular 예제 참조)
+- 풍부한 인터페이스를 이용하면 편리해지는 또 다른 영역으로 "비교(compare)"가 있다.
+    - 이건 너무 자주 쓰여서 스칼라에서는 Ordered 트레이트를 제공한다
+    - PiS 12장의 Rational 예제 참조
+- Ordered trait를 사용하는 방법
+    - 딱 2가지만 하면 된다.
+    - 1. Ordered를 믹스인 할 때 Ordered[C]와 같이 비교하고자 하는 클래스 C를 명시해야 한다
+    - 2. 두 객체를 비교하는 compare 메소드를 정의한다
 
 ## 10.3 구체적 구현이 있는 트레이트
 - 스칼라에서 트레이트의 메소드는 추상일 필요가 없다
@@ -33,6 +42,10 @@ class ConsoleLogger extends Logger with Cloneable with Serializable {
 ```
 trait ConsoleLogger {
   def log(msg: String) = { println(msg) }
+}
+
+class Account {
+  var balance: Double = 0
 }
 
 class SavingAccount extends Account with ConsoleLogger {
@@ -45,7 +58,7 @@ class SavingAccount extends Account with ConsoleLogger {
 
 
 ## 10.4 트레이트가 있는 오브젝트
-- trait를 믹스인 하여 트레이트를 확장할 수 있다.
+- 트레이트를 믹스인 하여 트레이트를 확장할 수 있다.
 - ex) val acct2 = new SavingAccount with ConsoleLogger
 - 가장 마지막에 추가된 trait가 실행된다. 순서가 중요!!
 ```
@@ -154,8 +167,8 @@ class Cat extends Animal with Furry with FourLegged
     
     
 ## 10.11 트레이트 필드 초기화
-- 트래이트는 생성인자를 가질 수 없다
-- 생성인자의 부재가 클래스와 트래이트의 유일한 기술적 차이점이다
+- 트레이트는 생성인자를 가질 수 없다
+- 생성인자의 부재가 클래스와 트레이트의 유일한 기술적 차이점이다
 - 대체방법1. 익명 서브클래스로 필드 초기화 - 조기 정의
     - 조기정의는 생성 순서 전에 일어난다.
 - 대체방법2. trait 생성자에 레이지값을 쓰는 것
@@ -164,12 +177,12 @@ class Cat extends Animal with Furry with FourLegged
     
 
 ## 결론
-- 트래이트는 다중상속과 비슷하다
+- 트레이트는 다중상속과 비슷하다
 - 하지만 선형화를 통해 super를 해석하기 때문에 다중상속의 몇가지 어려움을 피한다
 - 원하는 기능을 스택처럼 쌓아올릴 수 있다
 - Ordered 트레이트를 살펴보자
 - 트레이트는 상속을 통해 재사용할 수 있는 기본 코드 단위이다. 간단한 개념조각을 담는다
-- 이런 특성 때문에 경험있는 스칼라 프로그래머들은 구현 초기에 트래이트로 시작하는 경우가 많다
+- 이런 특성 때문에 경험있는 스칼라 프로그래머들은 구현 초기에 트레이트로 시작하는 경우가 많다
 - 설계를 구체적으로 진행해가면서 각 조각을 믹스인해서 좀 더 완전한 개념으로 조합할 수 있다
 
 ## 트레이트냐 아니냐, 이것이 문제로다

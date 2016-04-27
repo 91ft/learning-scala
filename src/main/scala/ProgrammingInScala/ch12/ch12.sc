@@ -1,10 +1,10 @@
 import ProgrammingInScala.ch12._
 
-//val rect = new Rectangle(new Point(1,1), new Point(10,10))
-//rect.left
-//rect.right
-//rect.width
-//
+val rect = new Rectangle(new Point(1,1), new Point(10,10))
+rect.left
+rect.right
+rect.width
+
 //val half = new Rational(1, 2)
 //val third = new Rational(1, 3)
 //
@@ -36,6 +36,6 @@ import ProgrammingInScala.ch12._
 //fQueue.get()
 //fQueue.get()
 
-val q = new BasicIntQueue with Incrementing with Doubling
-q.put(10)
-q.get()
+//val q = new BasicIntQueue with Incrementing with Doubling
+//q.put(10)
+//q.get()
