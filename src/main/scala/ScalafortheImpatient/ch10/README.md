@@ -64,8 +64,8 @@ class SavingAccount extends Account with ConsoleLogger {
 - 트레이트를 믹스인 하여 트레이트를 확장할 수 있다.
 - ex) val acct2 = new SavingAccount with ConsoleLogger
 - 가장 마지막에 추가된 trait가 실행된다. 순서가 중요!!
-- Q. 아래 코드 실행하면 어떻게 나올까요?
-- <img src="https://openclipart.org/image/2400px/svg_to_png/194097/googley-eye-birdie-has-questions.png" width="300" height="170" />
+- Quiz. 아래 코드 실행하면 어떻게 나올까요?
+- <img src="https://openclipart.org/image/200px/svg_to_png/194097/googley-eye-birdie-has-questions.png" />
 ```
 trait Logged {
   def log(msg: String) {}
@@ -91,7 +91,8 @@ class SavingAccount extends Account with Logged {
 ## 10.5 레이어드 트레이트
 - super.log는 트레이트가 더해지는 순서에 의해 결정되는 트레이트 계층도에서 다음 트레이트를 호출한다.
 - 일반적인 트레이트는 마지막 것부터 처리된다
-- Quiz. acct3, acct4 리턴값은 각각 어떻게 될까?
+- Quiz. acct3, acct4 리턴값은 각각 어떻게 될까? 이제 눈치 채셨죠?!
+- <img src="https://openclipart.org/image/200px/svg_to_png/183310/googley-eye-bird-pink.png" />
 ```
 val acct3 = new SavingAccount with ConsoleLogger
   with TimestampLogger
