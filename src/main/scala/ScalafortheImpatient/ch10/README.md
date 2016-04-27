@@ -25,15 +25,7 @@ class ConsoleLogger extends Logger with Cloneable with Serializable {
 }
 
 ```
-- 믹스인하여 사용하면 코드 반복을 줄일 수 있다
-- 즉 간결한 인터페이를 믹스인하여 풍부한 인터페이스로 만들 수 있다. (PiS 12장. Rectangular 예제 참조)
-- 풍부한 인터페이스를 이용하면 편리해지는 또 다른 영역으로 "비교(compare)"가 있다.
-    - 이건 너무 자주 쓰여서 스칼라에서는 Ordered 트레이트를 제공한다
-    - PiS 12장의 Rational 예제 참조
-- Ordered trait를 사용하는 방법
-    - 딱 2가지만 하면 된다.
-    - 1. Ordered를 믹스인 할 때 Ordered[C]와 같이 비교하고자 하는 클래스 C를 명시해야 한다
-    - 2. 두 객체를 비교하는 compare 메소드를 정의한다
+
 
 ## 10.3 구체적 구현이 있는 트레이트
 - 스칼라에서 트레이트의 메소드는 추상일 필요가 없다
@@ -56,11 +48,24 @@ class SavingAccount extends Account with ConsoleLogger {
 }
 ```
 
+## 잠깐! 트레이트를 왜 믹스인해서 쓰나?
+- 믹스인하여 사용하면 코드 반복을 줄일 수 있다
+- 간결한 인터페이를 믹스인하여 풍부한 인터페이스로 만들 수 있다. (PiS 12장. Rectangular 예제 참조)
+- 풍부한 인터페이스를 이용하면 편리해지는 또 다른 영역으로 "비교(compare)"가 있다.
+    - 이건 너무 자주 쓰여서 스칼라에서는 Ordered 트레이트를 제공한다
+    - PiS 12장의 Rational 예제 참조
+- Ordered trait를 사용하는 방법
+    - 딱 2가지만 하면 된다.
+    - 1. Ordered를 믹스인 할 때 Ordered[C]와 같이 비교하고자 하는 클래스 C를 명시해야 한다
+    - 2. 두 객체를 비교하는 compare 메소드를 정의한다
+
 
 ## 10.4 트레이트가 있는 오브젝트
 - 트레이트를 믹스인 하여 트레이트를 확장할 수 있다.
 - ex) val acct2 = new SavingAccount with ConsoleLogger
 - 가장 마지막에 추가된 trait가 실행된다. 순서가 중요!!
+- Q. 아래 코드 실행하면 어떻게 나올까요?
+- [?](https://openclipart.org/image/2400px/svg_to_png/194097/googley-eye-birdie-has-questions.png =250x)
 ```
 trait Logged {
   def log(msg: String) {}
