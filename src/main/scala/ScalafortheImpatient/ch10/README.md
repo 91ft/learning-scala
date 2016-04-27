@@ -65,7 +65,7 @@ class SavingAccount extends Account with ConsoleLogger {
 - ex) val acct2 = new SavingAccount with ConsoleLogger
 - 가장 마지막에 추가된 trait가 실행된다. 순서가 중요!!
 - Q. 아래 코드 실행하면 어떻게 나올까요?
-- [?](https://openclipart.org/image/2400px/svg_to_png/194097/googley-eye-birdie-has-questions.png =250x)
+- ![?](https://openclipart.org/image/2400px/svg_to_png/194097/googley-eye-birdie-has-questions.png =250x)
 ```
 trait Logged {
   def log(msg: String) {}
