@@ -108,7 +108,7 @@ val acct4 = new SavingAccount with ConsoleLogger
 - 추상 메소드를 상속받은 trait는 컴파일 오류 발생
 - 어떤 메소드가 믹스인되는지 알 수 없음
 - 컴파일러는 구체적인 메소드가 믹스인 되기를 요구한다.
-- 책에는 trait에 abstract override 키워드를 붙여주라고 함.
+- 구현부 없는 메소드인 경우 abstract override 키워드를 붙여줍니다.
 - 선형화(linearization)가 중요 함! 
 - ex) http://stackoverflow.com/questions/32511722/stackable-traits-pattern-methods-implementation-needs-abstract-override-mo
 
@@ -116,7 +116,7 @@ val acct4 = new SavingAccount with ConsoleLogger
 ## 10.7 리치 인터페이스를 위한 트레이트
 - 한 trait에 추상메소드와 구체메소드가 조합되어 구현될 수 있음
 - 트레이트에서 구체메소드와 추상메소드의 이용은 스칼라에서 매우 흔하다
-
+- 위에서 이미 한 얘기임
 
 ## 10.8 트레이트의 구체 필드
 - trait를 믹스인하는 클래스는 구체필드를 획득한다
@@ -144,7 +144,7 @@ val acct9 = new SavingAccount with ConsoleLogger with ShortLogger {
 
 ## 10.10 트레이트 생성 순서
 - Super Class 생성자 호출
-- 트레이트 생성자는 Super Class 생성자 이후 Class 생성자 전에 실행
+- 트레이트 생성자는 Super Class 생성자 이후, Class 생성자 전에 실행
 - 트레이트는 왼쪽에서 오른쪽으로 생성된다
 - 각 트레이트에서 부모가 먼저 생성된다
 - 여러 트레이트가 공통의 부모를 공유하고 부모가 이미 생성되었으면 다시 생성하지 않는다

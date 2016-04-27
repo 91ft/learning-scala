@@ -1,8 +1,5 @@
 package ScalafortheImpatient.ch10
 
-/**
-  * Created by Harley on 2016. 4. 20..
-  */
 trait Logged {
   def log(msg: String) {}
 }

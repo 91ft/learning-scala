@@ -19,8 +19,8 @@ acct.withdraw(100)
 //acct4.withdraw(300)
 
 // 10.6
-//val acct6 = new SavingAccount106
-//acct6.withdraw(300)
+val acct6 = new SavingAccount106
+acct6.withdraw(300)
 
 // 10.7
 //val acc7 = new SavingsAccount107
