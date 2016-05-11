@@ -131,7 +131,7 @@ class Example {
 }
 
 val t = new Example
-t.method(5)
+t.method(5) // Quiz
 ```
 추출자를 사용해서 어떤 타입의 오브젝트에서든 정보를 뽑아낼 수 있다
 ```
@@ -162,6 +162,7 @@ bigBoss match {
    case Name(first, middle, last) => println("2")
    case Name(first, "van", "der", last) => println("3")
 }
+// Quiz
 ```
 
 
