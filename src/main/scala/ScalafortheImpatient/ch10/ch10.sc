@@ -1,13 +1,13 @@
 import ScalafortheImpatient.ch10._
 
 //10.4
-val acct: SavingAccount = new SavingAccount
-acct.withdraw(100)
-//
+//val acct: SavingAccount = new SavingAccount
+//acct.withdraw(100)
+////
 //val acct2 = new SavingAccount with ConsoleLogger
 //acct2.withdraw(200)
-
-// 10.5
+//
+//// 10.5
 //val acct3 = new SavingAccount with ConsoleLogger
 //                              with TimestampLogger
 //                              with ShortLogger

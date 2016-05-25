@@ -5,12 +5,12 @@ rect.left
 rect.right
 rect.width
 
-//val half = new Rational(1, 2)
-//val third = new Rational(1, 3)
-//
-//half < third
-//half > third
-//
+val half = new Rational(1, 2)
+val third = new Rational(1, 3)
+
+half < third
+half > third
+
 //val queue = new BasicIntQueue
 //queue.put(10)
 //queue.put(20)

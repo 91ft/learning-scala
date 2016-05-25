@@ -1,8 +1,8 @@
 package ScalafortheImpatient.ch10
 
 trait Logged106 {
-  //def log(msg: String) //이 메소드는 추상이다
-  def log(msg: String) {} //TODO. 지워주세요~
+  def log(msg: String) //이 메소드는 추상이다
+  //def log(msg: String) {} //TODO. 지워주세요~
 }
 
 trait TimestampLogger106 extends Logged106 {
@@ -21,13 +21,14 @@ trait ShortLogger106 extends Logged106 {
 }
 
 
-class Account106 {
+class Account106 extends Logged106{
+  override def log(msg: String) { println("@@"+msg) }
+
   var balance: Double = 0
 }
 
-class SavingAccount106 extends Account106 with TimestampLogger106 with ShortLogger106 {
 
-  override def log(msg: String) { println(msg) }
+class SavingAccount106 extends Account106 with TimestampLogger106 with ShortLogger106 {
 
   var interest = 0.0
   //val maxLength = 20
@@ -37,3 +38,4 @@ class SavingAccount106 extends Account106 with TimestampLogger106 with ShortLogg
     else balance -= amount
   }
 }
+

@@ -6,7 +6,7 @@ package ScalafortheImpatient.ch10
 trait Logged106Answer {
 
 }
-//
+
 //trait Logged106 {
 //  def log(msg: String) //이 메소드는 추상이다
 //}
@@ -40,4 +40,4 @@ trait Logged106Answer {
 //    else balance -= amount
 //  }
 //}
-//
+
