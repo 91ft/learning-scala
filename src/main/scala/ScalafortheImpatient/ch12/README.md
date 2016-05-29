@@ -191,6 +191,4 @@ x:Double => factor * x 에서 참조된다. 그러고 나서 인자 변수 facto
 
    ```
    어떻게 하면 reductLeft로 배열의 가장 큰 원소를 얻을수 있는가.
-
-   (1 to 9).reduceLeft(_ max _)
    ```
