@@ -158,20 +158,19 @@ x:Double => factor * x 에서 참조된다. 그러고 나서 인자 변수 facto
    ```
 
 
+<hr/>
 
-## 별책 부록
-```
- 스칼라에서 _ 의 의미를 낱낱이 파헤쳐본다
-```
+# 별책 부록
 
-1. Import all
+> 스칼라에서 _ 의 의미를 낱낱이 파헤쳐본다
 
+* Import all
 ```
  import scala.util.control.Breaks._
- ```
-2. default value
- 단, 생성자에서만! 함수 노!
 ```
+* default value
+```
+ 단, 생성자에서만! 함수 노!
 class Foo {
     var i:Int = _ // i = 0
     var s:String = _ // s = null
@@ -180,10 +179,10 @@ class Foo {
     // var i:String = _//error: local variables must be initialized
     }
 }
+
 ```
 
-3. Unused variables
-
+* Unused variables
 ```
  def inPatternMatching2(s:String) {
     s match {
@@ -192,23 +191,21 @@ class Foo {
     }
 }
 ```
-
-4. Anonymous parameters //param이 명확할때.
-
+* Anonymous parameters 
 ```
+//param이 명확할때.
 (1 to 10) map { x => x + 1}
 (1 to 10) map { _ + 1}
 (1 to 10).foldLeft(0) { (x,y) => x+y }
 (1 to 10).foldLeft(0) { _+_ }
 ```
 
-5. Don’t import name in namespace
- 콜렉션의 Map관련 메소드들은 임포트 하지마라
+* Don’t import name in namespace
 ```
-import collection.{ Map => _ , _ }
+import collection.{ Map => _ , _ }  //콜렉션의 Map관련 메소드들은 임포트 하지마라
 ```
 
-6. Syntactic sugar for existential type
+* Syntactic sugar for existential type
 ```
 import scala.mah._
 var calc = ceil _
@@ -218,5 +215,5 @@ var calc = ceil _
 **[마틴 아저씨 existential type](http://www.artima.com/scalazine/articles/scalas_type_system.html)**
 
  
-<hr/>
+
 
