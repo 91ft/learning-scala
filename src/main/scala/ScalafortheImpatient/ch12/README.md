@@ -1,7 +1,8 @@
 # Chapter 12. 고차 함수
 
 함수형 언어는 다른 모든 데이터 타입과 마찬가지로 주고 받고 조작할수 있는 1등 시민이다.
-자바에서는 객체와 원시값을 메서드에전달했었지만. 함수형 언어에서는 함수도 전달 가능
+자바에서는 객체와 원시값을 메서드에전달했었지만.
+함수형 언어에서는 함수도 전달 가능
 
 
 - 스칼라에서는 함수도 1등시민
@@ -9,68 +10,10 @@
 - 함수 인자는 나중에 실행될 행동을 지정한다.
 - 많은 콜렉션 메소드는 함수 인자들을 받아서 함수를 콜렉션의 값들에 적용한다.
 - 함수인자를 더 쉽고 짧게. 단축 문법
+- 
+<hr />
 
-## 별책 부록
-```
- 스칼라에서 _ 의 의미를 낱낱이 파헤쳐본다
-```
 
-- Imprt all
-```
- import scala.util.control.Breaks._
- ```
-
-- default value
-
- 단, 생성자에서만! 함수 노!
-
-```
-class Foo {
-    var i:Int = _ // i = 0
-    var s:String = _ // s = null
-
-    def f {
-    // var i:String = _//error: local variables must be initialized
-    }
-}
-```
-
-- Unused variables
-
-```
- def inPatternMatching2(s:String) {
-    s match {
-        case "foo" => println("foo !")
-        case _ => println("not foo")
-    }
-}
-```
-
-- Anonymous parameters
-
-파람이 명확할때!!
-```
-(1 to 10) map { x => x + 1}
-(1 to 10) map { _ + 1}
-(1 to 10).foldLeft(0) { (x,y) => x+y }
-(1 to 10).foldLeft(0) { _+_ }
-```
-
-- Don’t import name in namespace
- 콜렉션의 Map관련 메소드들은 임포트 하지마라
-
-```
-import collection.{ Map => _ , _ }
-```
-
-- Syntactic sugar for existential type
-
-```
-import scala.mah._
-var calc = ceil _
-```
-특정 타입을 지칭하는거 . 위에서 내려온 타입을 그대로 쓰겠다
-http://www.artima.com/scalazine/articles/scalas_type_system.html
 
 ## 1. 값으로서 함수
 ```
@@ -83,8 +26,6 @@ http://www.artima.com/scalazine/articles/scalas_type_system.html
 ```
 (x:Double) => 3*x // 이 함수에 인자에 3을 곱한다.
 ```
-
-
 
 변수에 저장도 가능
 ```
@@ -192,10 +133,10 @@ x:Double => factor * x 에서 참조된다. 그러고 나서 인자 변수 facto
 
 
 ## 8. return 표현식
-   함수 값을 리턴하기 위해 return문을 사용하지 않는다.
-   함수의 리턴 값은 단순히 함수 바디의 값이다.
+함수 값을 리턴하기 위해 return문을 사용하지 않는다.
+함수의 리턴 값은 단순히 함수 바디의 값이다.
 
-   익명함수에서 이름 있는 함수에 값을 리턴하기 위해 return을 사용할수 있다.
+익명함수에서 이름 있는 함수에 값을 리턴하기 위해 return을 사용할수 있다.
 
    ```
    def indexOf(str: String, ch:Char):Int ={
@@ -215,3 +156,67 @@ x:Double => factor * x 에서 참조된다. 그러고 나서 인자 변수 facto
    ```
    어떻게 하면 reductLeft로 배열의 가장 큰 원소를 얻을수 있는가.
    ```
+
+
+
+## 별책 부록
+```
+ 스칼라에서 _ 의 의미를 낱낱이 파헤쳐본다
+```
+
+1. Import all
+
+```
+ import scala.util.control.Breaks._
+ ```
+2. default value
+ 단, 생성자에서만! 함수 노!
+```
+class Foo {
+    var i:Int = _ // i = 0
+    var s:String = _ // s = null
+
+    def f {
+    // var i:String = _//error: local variables must be initialized
+    }
+}
+```
+
+3. Unused variables
+
+```
+ def inPatternMatching2(s:String) {
+    s match {
+        case "foo" => println("foo !")
+        case _ => println("not foo")
+    }
+}
+```
+
+4. Anonymous parameters //param이 명확할때.
+
+```
+(1 to 10) map { x => x + 1}
+(1 to 10) map { _ + 1}
+(1 to 10).foldLeft(0) { (x,y) => x+y }
+(1 to 10).foldLeft(0) { _+_ }
+```
+
+5. Don’t import name in namespace
+ 콜렉션의 Map관련 메소드들은 임포트 하지마라
+```
+import collection.{ Map => _ , _ }
+```
+
+6. Syntactic sugar for existential type
+```
+import scala.mah._
+var calc = ceil _
+```
+
+특정 타입을 지칭하는거 . 위에서 내려온 타입을 그대로 쓰겠다
+**[마틴 아저씨 existential type](http://www.artima.com/scalazine/articles/scalas_type_system.html)**
+
+ 
+<hr/>
+
