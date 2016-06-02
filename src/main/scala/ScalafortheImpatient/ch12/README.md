@@ -212,8 +212,6 @@ var calc = ceil _
 ```
 
 특정 타입을 지칭하는거 . 위에서 내려온 타입을 그대로 쓰겠다
-**[마틴 아저씨 existential type](http://www.artima.com/scalazine/articles/scalas_type_system.html)**
 
- 
 
 
