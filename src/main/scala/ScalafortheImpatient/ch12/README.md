@@ -10,7 +10,71 @@
 - 많은 콜렉션 메소드는 함수 인자들을 받아서 함수를 콜렉션의 값들에 적용한다.
 - 함수인자를 더 쉽고 짧게. 단축 문법
 
+## 별책 부록
+
+```
+ 스칼라에서 _ 의 의미를 낱낱이 파헤쳐본다
+```
+
+-. Imprt all
+```
+ import scala.util.control.Breaks._
+ ```
+
+_. default value
+
+ 단, 생성자에서만! 함수 노!
+
+```
+class Foo {
+    var i:Int = _ // i = 0
+    var s:String = _ // s = null
+
+    def f {
+    // var i:String = _//error: local variables must be initialized
+    }
+}
+```
+
+-.  Unused variables
+
+```
+ def inPatternMatching2(s:String) {
+    s match {
+        case "foo" => println("foo !")
+        case _ => println("not foo")
+    }
+}
+```
+
+_. Anonymous parameters
+
+파람이 명확할때!!
+```
+(1 to 10) map { x => x + 1}
+(1 to 10) map { _ + 1}
+(1 to 10).foldLeft(0) { (x,y) => x+y }
+(1 to 10).foldLeft(0) { _+_ }
+```
+
+_. Don’t import name in namespace
+ 콜렉션의 Map관련 메소드들은 임포트 하지마라
+
+```
+import collection.{ Map => _ , _ }
+```
+
+_. Syntactic sugar for existential type
+
+```
+import scala.mah._
+var calc = ceil _
+```
+특정 타입을 지칭하는거 . 위에서 내려온 타입을 그대로 쓰겠다
+http://www.artima.com/scalazine/articles/scalas_type_system.html
+
 ## 값으로서 함수
+
 
 ```
  스칼라에서 함수는 숫자와 마찬가지로 1등시민, 함수를 변수에 저장 가능
