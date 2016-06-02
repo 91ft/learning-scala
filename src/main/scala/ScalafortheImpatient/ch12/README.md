@@ -11,17 +11,16 @@
 - 함수인자를 더 쉽고 짧게. 단축 문법
 
 ## 별책 부록
-
 ```
  스칼라에서 _ 의 의미를 낱낱이 파헤쳐본다
 ```
 
--. Imprt all
+- Imprt all
 ```
  import scala.util.control.Breaks._
  ```
 
-_. default value
+- default value
 
  단, 생성자에서만! 함수 노!
 
@@ -36,7 +35,7 @@ class Foo {
 }
 ```
 
--.  Unused variables
+- Unused variables
 
 ```
  def inPatternMatching2(s:String) {
@@ -47,7 +46,7 @@ class Foo {
 }
 ```
 
-_. Anonymous parameters
+- Anonymous parameters
 
 파람이 명확할때!!
 ```
@@ -57,14 +56,14 @@ _. Anonymous parameters
 (1 to 10).foldLeft(0) { _+_ }
 ```
 
-_. Don’t import name in namespace
+- Don’t import name in namespace
  콜렉션의 Map관련 메소드들은 임포트 하지마라
 
 ```
 import collection.{ Map => _ , _ }
 ```
 
-_. Syntactic sugar for existential type
+- Syntactic sugar for existential type
 
 ```
 import scala.mah._
@@ -73,17 +72,14 @@ var calc = ceil _
 특정 타입을 지칭하는거 . 위에서 내려온 타입을 그대로 쓰겠다
 http://www.artima.com/scalazine/articles/scalas_type_system.html
 
-## 값으로서 함수
-
-
+## 1. 값으로서 함수
 ```
  스칼라에서 함수는 숫자와 마찬가지로 1등시민, 함수를 변수에 저장 가능
 ```
 
 
-## 익명 함수
+## 2. 익명 함수
 스칼라에서는 각 함수마다 이름을 줄 필요는 없다.=> 익명함수
-
 ```
 (x:Double) => 3*x // 이 함수에 인자에 3을 곱한다.
 ```
@@ -116,7 +112,7 @@ Array(3.14, 1.42, 2.0) map{ (x:Double) => 3*x }
 그냥 하던대로 하자.
 
 
-## 함수 인자를 받는 함수
+## 3. 함수 인자를 받는 함수
 
 다른 함수를 인자로 받는 함수를 구현하는 법
 ```
@@ -133,15 +129,15 @@ ex)
 
 valueAtOneQuarter 이 함수는 함수를 받는 함수 이기 때문에 고차 함수라고 불린다.
 
-## 인자 추론
+## 4. 인자 추론
 
 스칼라는 가능하면 타입을 추론하여 도움을 준다.
 
-## 유용한 고차 함수
+## 5. 유용한 고차 함수
 
 콜렉션 라이브러리 메소드들
 
-## 클로저
+## 6. 클로저
 ```
 def mulBy(factor : Double) = (x : Double) => factor *x
 val triple = mulBy(3)
@@ -164,7 +160,7 @@ x:Double => factor * x 에서 참조된다. 그러고 나서 인자 변수 facto
 이런 함수를 클로저라 부른다.
 클로저는 코드와 함께 코드를 사용하는 비지역 변수의 정의들로 구성된다.
 
-## 커링
+## 7. 커링
 
    커링은 인자 두개를 받는 함수를 인자 하나를 받는 함수로 바꾸는 프로세스다.
    이 함수는 두번째 인자를 소비하는 함수를 리턴한다.
@@ -195,7 +191,7 @@ x:Double => factor * x 에서 참조된다. 그러고 나서 인자 변수 facto
 ```
 
 
-## return 표현식
+## 8. return 표현식
    함수 값을 리턴하기 위해 return문을 사용하지 않는다.
    함수의 리턴 값은 단순히 함수 바디의 값이다.
 
