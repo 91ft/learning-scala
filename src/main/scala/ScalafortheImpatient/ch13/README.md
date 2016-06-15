@@ -51,7 +51,7 @@ scala.collection 패키지의 컴패니언 오브젝트는 수정 불가능한 �
 
 수정 불가능한 콜렉션은 기존 컬렉션에서 새로운 컬렉션을 만든다.
 
-immutable - http://docs.scala-lang.org/resources/images/collections.immutable.png
+immutable - http://docs.scala-lang.org/resources/images/collections.immutable.png  
 mutable - http://i.stack.imgur.com/Dsptl.png
 
 <br/><br/>
@@ -170,7 +170,6 @@ while (cur != Nil && cur.next != Nil) {
 prev 레퍼런스가 있는 DoubleLinkedList도 있음.  
 but, 둘 다 2.11.0부터 deprecated됨.  
 
-----
 리스트의 노드를 리스트의 마지막 노드로 만들때 next 레퍼런스를 Nill로 할 수 없다. (NPE발생) LinkedList.empty 사용!
 
 <br/><br/>
@@ -196,8 +195,8 @@ val weekdays  = scala.collection.mutable.LinkedHashSet(“Mo” ,”Tu”, “We
 ```
 scala.collection.immutable.SortedSet(1,2,3,4,5,6)
 ```
-정렬된 집합은 레드-블랙 트리로 구현된다.  \
->> 2.9에 수정 가능한 SortedSet이 없다고 책에 나와있지만, 최신 버전 기준으로는 존재함.
+정렬된 집합은 레드-블랙 트리로 구현된다.  
+> 2.9에 수정 가능한 SortedSet이 없다고 책에 나와있지만, 최신 버전 기준으로는 존재함.
 
 
 #### 비트 집합(BitSet)
@@ -219,7 +218,7 @@ union, intersect, diff 메소드는 집합 연산을 수행
 
 ## 7. 원소들을 추가 혹은 제거하는 연산자
 
->> 자세한 내용은 교재 163p
+> 자세한 내용은 교재 163p
 
 coll :+ elem // 콜렉션 뒤에 추가  
 elem +: coll // 콜렉션 앞에 추가
